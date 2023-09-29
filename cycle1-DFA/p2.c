@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <time.h>
 
 int FINAL_STATE = 3;
 
@@ -52,7 +53,9 @@ int validateInput(char input[] ){
 
 
 int main(){
-    char input[40];
+    clock_t t;
+    t = clock();
+    char input[50];
     printf("Enter the input string : ");
     scanf("%s",input);
     int result = validateInput(input);
@@ -61,5 +64,8 @@ int main(){
     }else{
         printf("String is not valid\n");
     }
+    t = clock() - t;
+    double time_taken = ((double)t)/CLOCKS_PER_SEC; // calculate the elapsed time
+    printf("The program took %f seconds to execute\n", time_taken);
     return 0;
 }
