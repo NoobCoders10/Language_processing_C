@@ -1,3 +1,7 @@
+/**
+ * DFA accepting binay string ending with 00
+*/
+
 #include <stdio.h>
 #include <string.h>
 
